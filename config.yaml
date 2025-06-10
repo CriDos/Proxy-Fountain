@@ -1,0 +1,35 @@
+# ===============================================
+#      Конфигурация для Proxy-Fountain
+# ===============================================
+
+# Порт, на котором будет работать API
+api_port: 9999
+
+# --- Настройки логирования ---
+logging:
+  # Имя файла, в который будут записываться логи
+  log_file: "proxy_fountain.log"
+  # Уровень логов для вывода в консоль (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+  log_level_console: "INFO"
+  # Уровень логов для записи в файл (рекомендуется DEBUG, чтобы всё сохранять)
+  log_level_file: "DEBUG"
+
+# --- Глобальные настройки ---
+# Этот интервал будет использоваться, если у источника не задан свой собственный.
+# Можно использовать простые математические выражения.
+default_update_interval_seconds: 60 * 5 # 5 минут
+
+# --- Ключи доступа к API ---
+# Если этот список не пуст, для доступа к API потребуется один из этих ключей.
+# Если список пуст, API будет работать в открытом режиме.
+api_keys:
+  - "super-secret-key-for-app1"
+  - "another-key-for-monitoring"
+
+# --- Список ваших источников прокси ---
+# Просто укажите URL и тип. Скрипт сам найдет прокси в формате IP:PORT.
+sources:
+  - url: https://raw.githubusercontent.com/vmheaven/VMHeaven-Free-Proxy-Updated/refs/heads/main/socks5.txt
+    type: socks5
+    enabled: true
+    update_interval_seconds: 60 * 15 # 15 минут
