@@ -8,7 +8,7 @@ api_port: 9999
 # --- Настройки логирования ---
 logging:
   # Имя файла, в который будут записываться логи
-  log_file: "proxy_fountain.log"
+  log_file: "logs/proxy_fountain.log"
   # Уровень логов для вывода в консоль (DEBUG, INFO, WARNING, ERROR, CRITICAL)
   log_level_console: "INFO"
   # Уровень логов для записи в файл (рекомендуется DEBUG, чтобы всё сохранять)
